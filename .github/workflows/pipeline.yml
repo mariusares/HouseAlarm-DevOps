@@ -19,9 +19,6 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         pip install pylint
-
-  code_analysis:
-    needs: app_build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 
@@ -29,6 +26,9 @@ jobs:
     - name: Analysing the code with pylint
       run: |
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
+  app_analysis:
+    needs: app_build
+    runs-on: ubuntu-latest  
     - name: Run Codacy Analysis CLI
       uses: codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
       with:
