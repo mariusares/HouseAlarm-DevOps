@@ -25,10 +25,6 @@ jobs:
   codacy_security_scan:
     needs: app_build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read 
-      security-events: write 
-      actions: read
     steps:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
