@@ -1,13 +1,9 @@
-name: CI/CD House ALarm System WebApp
+name: CI/CD House ALarm System WebAPp
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
-  app_build:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
