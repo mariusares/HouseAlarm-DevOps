@@ -1,4 +1,4 @@
-name: CI/CD House ALarm System WebAPp
+name: CI/CD House ALarm System WebApp
 
 on: [push]
 
