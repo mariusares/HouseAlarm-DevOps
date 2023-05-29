@@ -1,5 +1,5 @@
 <?php
-if (!($mysqli = new mysqli("127.0.0.1", "dbuser", "dbpassword"))) {
+if (!($mysqli = new mysqli("176.61.107.235", "dbuser", "dbpassword"))) {
     die("Database Connection Error ! --> " . $mysqli->error);
 }
 if (!$mysqli->select_db("security")) {
@@ -12,7 +12,7 @@ class socketClient
 {
     function socketMesage($message)
     {
-        $address = "127.0.0.1";
+        $address = "176.61.107.235";
         $port    = "72";
         //$message = "reqestData";
         ($socket = socket_create(AF_INET, SOCK_STREAM, 0)) or

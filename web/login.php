@@ -44,7 +44,7 @@ if (isset($_POST['btn-login'])) {
             <div class="container" style="margin-top:50px; margin-bottom:50px">
                 <form id="login" method="post" role="form">
                     <div class="mb-3 ">
-                        <h6 class="text-center text-white text-solid bg-success">Security System Login: </h6>
+                        <h6 class="text-center text-white text-solid bg-success">Security System Login CI/CD: </h6>
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" name="username" placeholder="Username" required>
