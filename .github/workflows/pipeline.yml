@@ -24,14 +24,11 @@ jobs:
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
   codacy_security_scan:
     needs: app_build
-<<<<<<< HEAD
-=======
     permissions:
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     name: Codacy Security Scan
->>>>>>> 2fc02d941a04fc2ceacc0ec8223fc79139e667d2
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository to the GitHub Actions runner
@@ -87,4 +84,3 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_62dd8154624b438eb986469a79add630 }}
         images: 'pinit.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e35ac8ffb2864df1a6e54e449e0c3343 }}/pinit-azure:${{ github.sha }}'
-
