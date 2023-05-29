@@ -19,10 +19,6 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         pip install pylint
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout 
-      uses: actions/checkout@v3
     - name: Analysing the code with pylint
       run: |
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
