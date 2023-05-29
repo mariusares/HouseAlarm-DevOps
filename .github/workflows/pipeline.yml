@@ -3,7 +3,7 @@ name: CI/CD House ALarm System WebApp
 on: [push]
 
 jobs:
-  app_build:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,7 +23,7 @@ jobs:
       run: |
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
   codacy_security_scan:
-    needs: app_build
+    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: read 
