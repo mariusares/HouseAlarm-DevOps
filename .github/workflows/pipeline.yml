@@ -1,6 +1,10 @@
 name: CI/CD House ALarm System WebApp
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   app_build:
