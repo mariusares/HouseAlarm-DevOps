@@ -21,10 +21,10 @@ jobs:
         pip install pylint
 
   code_analysis:
-  needs: app_build
-  runs-on: ubuntu-latest
+    needs: app_build
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout 
       uses: actions/checkout@v3
     - name: Analysing the code with pylint
       run: |
@@ -41,8 +41,8 @@ jobs:
           # This will handover control about PR rejection to the GitHub side
         max-allowed-issues: 2147483647
   container_build:
-  needs: code_analysis
-  runs-on: ubuntu-latest
+    needs: code_analysis
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Docker Buildx
