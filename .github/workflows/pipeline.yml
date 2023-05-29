@@ -24,7 +24,8 @@ jobs:
   needs: app_build
   runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Analysing the code with pylint
       run: |
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
@@ -73,4 +74,4 @@ jobs:
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_62dd8154624b438eb986469a79add630 }}
         images: 'pinit.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e35ac8ffb2864df1a6e54e449e0c3343 }}/pinit-azure:${{ github.sha }}'
-          
+
