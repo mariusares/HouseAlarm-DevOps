@@ -36,7 +36,7 @@ if (isset($_POST['btn-login'])) {
     crossorigin="anonymous"></script>
 
 <head>
-    <title>House Alarm System Login</title>
+    <title>House Alarm System Login CI/CD</title>
     </body>
     <div class="container pt-5 d-flex align-items-center justify-content-center"
         style="max-width: 400px; min-width: 100px !important;">
