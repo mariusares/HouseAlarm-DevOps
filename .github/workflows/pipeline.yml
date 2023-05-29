@@ -69,11 +69,10 @@ jobs:
         push: true
         tags: pinit.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e35ac8ffb2864df1a6e54e449e0c3343 }}/pinit-azure:${{ github.sha }}
         file: ./Dockerfile
-    - name: Docker Integration Test
-      run: |
-        docker run -d -p 8000:80 --name test2 pinit.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e35ac8ffb2864df1a6e54e449e0c3343 }}/pinit-azure:${{ github.sha }
-        sleep 2
-        curl http://localhost:8000
+        run: |
+          docker run -d -p 8000:80 --name test2 pinit.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e35ac8ffb2864df1a6e54e449e0c3343 }}/pinit-azure:${{ github.sha }
+          sleep 2
+          curl http://localhost:8000
   contailer_deployment:
     runs-on: ubuntu-latest
     needs: container_build
