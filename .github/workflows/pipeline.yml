@@ -27,13 +27,13 @@ jobs:
       run: |
        pylint --disable=E0401 --disable=C0114 --disable=W0107 --disable=C0103 --ignore-paths="^web/*" python_server/*.py
   codacy_security_scan:
+    runs-on: ubuntu-latest
     needs: app_build
     permissions:
       contents: read 
       security-events: write 
-      actions: read 
-      runs-on: ubuntu-latest
-      steps:
+      actions: read
+    steps:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
         uses: actions/checkout@v3
