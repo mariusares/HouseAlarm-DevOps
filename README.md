@@ -12,6 +12,10 @@ To install the Security Alarm System we have to run the fallowing commands:
 `chmod +x installer.sh`
 
 
+Login: admin 
+Password: admin
+
+
 Then, you should be fine
 
 Thank you
